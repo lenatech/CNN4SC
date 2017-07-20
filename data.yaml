@@ -1,0 +1,42 @@
+# directory containing collected corpora
+dir: data
+
+# directory containing postprocess script, each file should implement a 'doit' function
+# that takes a pandas dataframe as input and output a pandas datafram, please see postprocess/lj40kreduce.py for a reference
+#postprocess_dir: postprocess
+
+w2v_file: word2vec/GoogleNews-vectors-negative300.bin
+
+# Each of the following corpus are collected in several files (train/dev/test)
+# For each file, a line starts with the emotion label, and then comes the sentence
+# e.x.
+# negative He is very sad.
+
+MR:
+    train: MR/rt-polarity.all
+
+SST1:
+    #train: stsa.fine.phrases.train
+    train: SST1/stsa.fine.train
+    dev: SST1/stsa.fine.dev
+    test: SST1/stsa.fine.test
+
+SST2:
+    #train: stsa.binary.phrases.train
+    train: SST2/stsa.binary.train
+    dev: SST2/stsa.binary.dev
+    test: SST2/stsa.binary.test
+
+SUBJ:
+    train: SUBJ/subj.all
+
+TREC:
+    train: TREC/TREC.train.all
+    test: TREC/TREC.test.all
+
+CR:
+    train: CR/custrev.all
+
+MPQA:
+    train: MPQA/mpqa.all
+
